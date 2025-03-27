@@ -40,3 +40,45 @@
 .read-the-docs {
   color: #888;
 }
+
+.bg-grid-white\/10 {
+  background-size: 4em 4em;
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.1) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  transform: perspective(1000px) rotateX(60deg);
+  transform-origin: top;
+}
+
+/* Ajout d'un effet de scintillement global */
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
+.animate-flicker {
+  animation: flicker 0.5s infinite;
+}
+
+/* Effet de distorsion CRT */
+.crt::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+  z-index: 50;
+}
